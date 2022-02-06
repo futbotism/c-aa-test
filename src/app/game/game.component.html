@@ -1,0 +1,15 @@
+<div *ngIf="(winner | async)?.winner; else playing">
+  <h1>WINNER!</h1>
+  <p>{{ (winner | async)?.score }}</p>
+  <button (click)="restart()">Play Again</button>
+</div>
+<ng-template #playing>
+  <header>
+    <p>{{ timer | async }}</p>
+    <button (click)="toggleHint()">Hint</button>
+  </header>
+  <hr />
+  <app-board
+    [style.grid-template-columns]="'repeat(' + rows + ', 1fr)'"
+  ></app-board>
+</ng-template>

@@ -1,27 +1,8 @@
-# CAaTest
+# Clipboard test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- This test was a fun challenge, i added in automatically generated colors for something abit different
+- I opted not to use any state so i could keep it simple and barebones, although the basic premise of subscriptions are used.
+- I opted not to use any css libraries again to keep it simple and basic, although things are aligned correctly and some style sugar would make it appear like a real application
+- I ran out of time to add tests unfortunately, but i did split up the state file into a bunch of simple functions which would make testing much easier.
+- If i wanted to further develop this into a real application i would add leaderboards, shared & core modules redux and those surrounding pattern which greatly enhance application architecture

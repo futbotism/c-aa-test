@@ -1,0 +1,5 @@
+<ng-container *ngFor="let row of board | async; let x = index">
+
+    <app-card *ngFor="let cell of row; let y = index" (clicked)="clickCard(x, y)" [hint]="hint | async" [piece]="cell"></app-card>
+
+</ng-container>

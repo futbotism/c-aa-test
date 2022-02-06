@@ -1,0 +1,8 @@
+<div
+  [class.found]="piece?.found"
+  (click)="clicked.emit()"
+  [style.background-color]="piece?.checked ? piece?.color : 'grey'"
+  [@cardFlip]="piece?.checked ? 'flipped' : 'default'"
+></div>
+
+<span [style.background-color]="hint ? piece?.color : 'grey'"></span>

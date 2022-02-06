@@ -1,0 +1,12 @@
+div {
+    height: 150px;
+
+    &.found {
+        pointer-events: none;
+    }
+}
+
+span {
+    display: block;
+    height: 10px;
+}
