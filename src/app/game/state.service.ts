@@ -67,35 +67,41 @@ export class StateService {
     this.hintSubject.next(this.showHint);
   }
 
-  initPieces(root: number = 6) {
+  initPieces() {
     // create set of random colors half length of game cards
+    const root = this.root;
     const colorSet: string[] = this.getColorSet(root);
     // double and duplicate the color set
     const colors = [...colorSet, ...colorSet];
 
-    return Array(root)
-      .fill(0)
-      .map(() =>
-        Array(root)
-          .fill(0)
-          .map(() => ({
-            checked: false,
-            found: false,
-            color: colors.pop() as string,
-            turns: 0,
-          }))
-      );
+    const set: any[][] = [];
+
+    for (let xIndex = 0; xIndex < root; xIndex++) {
+      set.push([])
+      for (let yIndex = 0; yIndex < root; yIndex++) {
+        set[xIndex].push({
+          checked: false,
+          found: false,
+          color: colors.pop() as string,
+          turns: 0,
+        })
+      }
+    }
+
+    return set;
   }
 
   getColorSet(root: number) {
-    return Array((root * root) / 2)
-      .fill(0)
-      .map(() =>
+    const set = [];
+    for (let index = 0; index < (root * root) / 2; index++) {
+      set.push(
         randomColor({
           luminosity: 'bright',
           hue: 'random',
         })
       );
+    }
+    return set;
   }
 
   checkPiece(x: number, y: number) {
